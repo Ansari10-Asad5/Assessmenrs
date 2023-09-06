@@ -22,9 +22,9 @@ print(f"Minimum Daily Return: {data['daily_return'].min()}")
 print('***'*20)
 print()
 
-data['diff']=data['daily_return'].apply(lambda x:x-Avg_daily_return)
+data['squared_diff']=data['daily_return'].apply(lambda x:(x-Avg_daily_return)**2)
+print(data.head(2))
 
-deviation=np.sqrt((data['diff'].sum())**2/len(data))
 
 print(f"Standard Deviation of Daily Return: {deviation}")
 
